@@ -1,0 +1,12 @@
+Asynchronous App Dev
+
+Name: LYRIX+
+Author: Bryan Spearman
+
+App Services:
+	1. Allows user to search for an artist and a song
+	2. Search returns 5 video clips, lyrics to the song, wiki data about the artist
+	3. Errors provided if search can't find one of the expected items
+	4. Items with 'error' status don't prevent items with 'success' status from displaying
+	
+	
