@@ -42,14 +42,14 @@ function renderResult(result) {
 
 function displayVideoData(data) {
     const results = data.items.map((item, index) => renderResult(item));
-  $('.js-search-results').html(results);
+  $('.results-container').html(results);
 
 }
 
 function beginSearch() {
   $('.js-search-form').submit(event => {
     event.preventDefault();
-    const queryTarget = $(event.currentTarget).find('.js-search');
+    const queryTarget = $(event.currentTarget).find('.js-artist');
     const query = queryTarget.val();
     // clear out the input
     queryTarget.val("");
