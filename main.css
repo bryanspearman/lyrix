@@ -62,6 +62,11 @@ span {
 	margin-bottom: 0px;
 }
 
+.copyright {
+  font-size: .5em;
+  color: #333;
+}
+
 fieldset {
   border: none;
   text-align: center;

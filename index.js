@@ -21,17 +21,13 @@ function renderLyrics(result) {
       <h4>By: ${result.artist.name}</h4>
         <p>${result.track.text}</p>
         <p class="copyright">${result.copyright.text}</p> 
-      }
   `;
 }
 
-
-
-//Look over the data and use the render function to organize it on the page
+//Look over the data and use the renderLyrics function to organize it on the page
 function displayLyricsData(data) {
-    const results = data.items.map((item, index) => renderVideos(item));
-  $('.vidz').html(results);
-
+    const results = data.result.map((item, index) => renderLyrics(item));
+  $('.lyrix').html(results);
 }
 
 
@@ -69,7 +65,7 @@ function renderVideos(result) {
 }
 
 
-//Look over the data and use the render function to organize it on the page
+//Look over the data and use the renderVideos function to organize it on the page
 function displayVideoData(data) {
     const results = data.items.map((item, index) => renderVideos(item));
   $('.vidz').html(results);
@@ -79,11 +75,14 @@ function displayVideoData(data) {
 function beginSearch() {
   $('.js-search-form').submit(event => {
     event.preventDefault();
-    const queryTarget = $(event.currentTarget).find('.js-artist');
-    const query = queryTarget.val();
-    // clear out the input
-    queryTarget.val("");
-    getVideoData(query, displayVideoData);
+    const queryArtist = $(event.currentTarget).find('.js-artist');
+    const querySong = $(event.currentTarget).find('.js-song');
+    const artist = queryArtist.val();
+    const song = querySong.val();    
+    queryArtist.val("");
+    querySong.val("");
+    getLyricsData(artist, song, displayLyricsData);
+    getVideoData(song, displayVideoData);
   });
 }
 
