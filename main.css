@@ -62,6 +62,11 @@ span {
 	margin-bottom: 0px;
 }
 
+.copyright {
+  font-size: .5em;
+  color: #333;
+}
+
 fieldset {
   border: none;
   text-align: center;
@@ -98,7 +103,6 @@ button:hover {
 .searchResult h3 {
   font-family: 'Yantramanav', sans-serif;
 	margin: -10px 0px;
-  margin: 10px 0px -10px 0px;
 }
 
 
@@ -185,12 +189,7 @@ header p {
 .searchResult {
   width: 90%;
   padding: 10px;
-  margin-bottom: 10px;
   background: #f2f2f2;
-  border-radius: 5px;
-  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0,0.5);
-  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
 }
 
 .js-search-results {
@@ -202,6 +201,7 @@ header p {
 .videoThumbnail {
   width: 97%;
   border-radius: 5px;
+  border: 1px solid #555;
 }
 
 footer {
@@ -261,6 +261,11 @@ footer p {
     -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0,0.5);
     -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
     box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
+  }
+
+  .vidz {
+    border-right: 1px dotted #ccc;
+    padding-right: 10px;
   }
 
   main {
@@ -349,6 +354,7 @@ footer p {
   .videoThumbnail {
     width: 100%;
     border-radius: 5px;
+    border: 1px solid #555;
   }
 
   footer {
