@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>LYRIX+</title>
+	<title>LYRIX+ Song lyrics, related videos and artist info</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Bryan Spearman">
@@ -38,7 +38,30 @@
 
 		<section role="region" class="js-search-results" aria-live="assertive">
 			<h2><i class="fas fa-arrow-alt-circle-down"></i> Search Results</h2>
-			<div class="results-container"></div>
+			<div class="results-container">
+
+
+			  <div class="searchResult">
+		        <div class="row">
+		          <div class="col-4 vidz">
+		           <p><a data-fancybox class="iframe" title="opens video ${result.snippet.title}" href="https://www.youtube.com/watch?v=${result.id.videoId}"><img class="videoThumbnail" src="${result.snippet.thumbnails.default.url}" border="0" alt="${result.snippet.title}"/></a></p>
+		           <h3>
+		            <a data-fancybox class="js-result-title" title="opens video ${result.snippet.title}" href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank">${result.snippet.title}</a>
+		          </h3>
+		          <p>
+		            <a class="channelLink" title="visit this youtube channel" href="https://www.youtube.com/channel/${result.snippet.channelId}" target="_blank"><i class="fab fa-youtube"></i> Visit Channel</a>
+		          </p>
+		          </div>
+
+		        <div class="col-6">
+          
+		       </div>
+		      </div>
+		    </div>
+
+
+
+			</div> <!-- end of results container -->
 		</section>
 		
 	</main>
