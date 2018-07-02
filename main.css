@@ -27,7 +27,7 @@
 }
 
 html {
-    background: #000 url(img/blue-sm-bg.jpg);
+    background: url(img/blue-sm-bg.jpg);
     background-attachment: fixed;
     background-size: cover;
   }
@@ -37,10 +37,8 @@ body {
   font-size: 1em;
 	color: #333;
   width: 100%;
-  min-width: 100%;
-	padding: 0px;
-	margin: 0 auto;
-  background: linear-gradient(#090d3088, #090d3000);
+	padding: 0;
+	margin: 0;
 }
 
 a {
@@ -63,7 +61,7 @@ span {
 }
 
 .copyright {
-  font-size: .5em;
+  font-size: .75em;
   color: #333;
 }
 
@@ -85,16 +83,15 @@ input[type=text]:focus {
 	border: 2px solid #666;
 }
 
+input[type=text]:visited {
+  background: #eaeaea; 
+  border: 2px solid #666;
+}
+
 button:hover {
 	background: #25ce10;
 	cursor: pointer;
 }
-
-/*.results-container {
-  width: 90%;
-  padding: 0;
-  margin: 0;
-}*/
 
 .postedBy {
 	font-size: .9em;
@@ -120,11 +117,12 @@ button:hover {
   position: fixed;
   top: 0px;
   right: 0px;
-  background: url(img/blue-sm-bg.jpg);
+  background: transparent;
+  /*background: url(img/blue-sm-bg.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: bottom;
-  z-index: 2;
+  z-index: 2;*/
   -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0,0.5);
   -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
@@ -134,14 +132,18 @@ main {
   padding: 15px;
   margin: 75px auto 50px auto;
   width: 100%;
+  background: #fff;
   position: relative;
 }
 
 h2 {
   font-family: 'Yantramanav', sans-serif;
   padding-top: 20px;
-  color: #fff;
+  color: #090d30;
+  border-bottom: 4px dotted #e1e1e1;
+  width: 90%;
 }
+
 
 input[type=text] {
   -webkit-appearance: none;
@@ -186,20 +188,23 @@ header p {
   text-shadow: 2px 2px 2px #444;
 }
 
-.searchResult {
-  width: 90%;
-  padding: 10px;
-  background: #f2f2f2;
+.lyrix {
+    width: 100%;
+    word-wrap: normal;
+    padding: 5px;
+    margin: 0;
 }
 
-.js-search-results {
-  padding: 0;
-  margin: 0 auto;
-  width: 90%;
+.lyrix h3{
+    margin-bottom: -18px;
+}
+
+.byName {
+  font-size: .85em;
 }
 
 .videoThumbnail {
-  width: 97%;
+  width: 95%;
   border-radius: 5px;
   border: 1px solid #555;
 }
@@ -227,21 +232,21 @@ footer p {
 /* ///////////////////   Non-mobile   //////////////////////////  */
 
 @media only screen and (min-width: 840px) {
-   .col-1 {width: .0833%;}
-   .col-2 {width: .016666667%;}
+   .col-1 {width: 8.33%;}
+   .col-2 {width: 16.666667%;}
    .col-3 {width: 25%;}
    .col-4 {width: 33.33%;}
-   .col-5 {width: .41666667%;}
+   .col-5 {width: 41.666667%;}
    .col-6 {width: 50%;}
-   .col-7 {width: .5833%;}
-   .col-8 {width: .66666667%;}
+   .col-7 {width: 58.33%;}
+   .col-8 {width: 66.666667%;}
    .col-9 {widows: 75%;}
-   .col-10 {width: .833%;}
-   .col-11 {width: .91666667%;}
+   .col-10 {width: 83.3%;}
+   .col-11 {width: 91.666667%;}
    .col-12 {width: 100%;}
   
   html {
-    background: #000 url(img/blue-bg.jpg);
+    background: url(img/blue-bg.jpg);
 	  background-attachment: fixed;
 	  background-size: cover;
   }
@@ -263,9 +268,15 @@ footer p {
     box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
   }
 
+  .lyrix {
+    padding: 15px 10px 10px 10px;
+    margin-top: 15px;
+    background: #e1e1e1;
+    border-radius: 4px;
+  }
+
   .vidz {
-    border-right: 1px dotted #ccc;
-    padding-right: 10px;
+    padding-left: 10px;
   }
 
   main {
@@ -273,13 +284,16 @@ footer p {
     margin: 80px auto 60px auto;
     width: 100%;
     position: relative;
+    background: none;
     max-width: 1000px;
   }
 
   h2 {
-    padding-top: 25px;
+    font-family: 'Yantramanav', sans-serif;
+    padding: 25px 0px 0px 20px;
     color: #fff;
-  }
+    border: none;
+}
 
   input[type=text] {
     -webkit-appearance: none;
@@ -335,7 +349,6 @@ footer p {
   }
 
   .searchResult {
-    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     background: #f2f2f2;
@@ -345,14 +358,15 @@ footer p {
     box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
   }
 
-  .js-search-results {
+  /*.js-search-results {
     padding: 0;
     margin: 0 auto;
     width: 90%;
-  }
+  }*/
 
   .videoThumbnail {
     width: 100%;
+    margin: 0 auto;
     border-radius: 5px;
     border: 1px solid #555;
   }
