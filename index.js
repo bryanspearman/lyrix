@@ -1,14 +1,14 @@
 
 // API End Points
 const YouTube_Search_URL = 'https://www.googleapis.com/youtube/v3/search';
-const Lyrics_URL = 'https://orion.apiseeds.com/api/music/lyric/';
+const Lyrics_URL = 'https://orion.apiseeds.com/api/music/lyric';
 
 
 
 // API call for lyrics data
 function getLyricsData(artist, track, callback) {
   const query = {
-    key: `?apikey=oK4BjTgWNvSOZObSdtkDUIT9ERJyR53WYqetVDZvVi4ynNhHAENoybpyN3K5tmQl`,
+    apikey:`oK4BjTgWNvSOZObSdtkDUIT9ERJyR53WYqetVDZvVi4ynNhHAENoybpyN3K5tmQl`,
   }
   $.getJSON(`${Lyrics_URL}/${artist}/${track}`, query, callback);
 }
@@ -26,7 +26,7 @@ function renderLyrics(result) {
 
 //Look over the data and use the renderLyrics function to organize it on the page
 function displayLyricsData(data) {
-    const results = data.result.map((item, index) => renderLyrics(item));
+    const results = result.map((item, index) => renderLyrics(item));
   $('.lyrix').html(results);
 }
 
