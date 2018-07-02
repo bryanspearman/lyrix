@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>LYRIX+ Song lyrics, related videos and artist info</title>
+	<title>LYRIX+ Song lyrics + related videos</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Bryan Spearman">
@@ -11,49 +11,39 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Yantramanav" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">
 </head>
-<body>
+<body class="global">
 	<div class="hdr-container">
 		<header role="banner">
 			<h1>LYRIX<span>+</span></h1>
-			<p>Lyrics + Videos + Artist Info!</p>
+			<p>Lyrics + Videos!</p>
 		</header>
 	</div>
 
 	<main role="main">
 		<section role="search" class="search-form">
 			<form action="#" class="js-search-form">
-				<fieldset>
-					<label for="js-artist">
+			  <fieldset>
+				<label for="js-artist">
 	            	  <input type="text" title="search-field" id="js-artist" name="js-artist" class="js-artist" placeholder="Enter an artist name...">
 	               </label>
 	               <label for="js-song">
 	            	  <input type="text" title="search-field" id="js-song" name="js-song" class="js-song" placeholder="Enter a song title...">
 	               </label>
-               </fieldset>
+	              </fieldset>
                 <button type="submit">Search</button>
 			</form>
 		</section>
 
 	       
 
-		<section role="region" class="js-search-results" aria-live="assertive">
+		<section role="region" class="js-search-results" aria-live="assertive" hidden>
 			<h2><i class="fas fa-arrow-alt-circle-down"></i> Search Results</h2>
-
 			  <div class="searchResult">
 		        <div class="row">
-		          <div class="col-4 vidz">
-		           
-		          </div>
-
-		        <div class="col-6 lyrix">
-          
-		       </div>
-		      </div>
+		          <div class="col-5 lyrix"></div>
+		          <div class="col-6 vidz"></div>
+		        </div>
 		    </div>
-
-
-
-			
 		</section>
 		
 	</main>
