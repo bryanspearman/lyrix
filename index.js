@@ -94,6 +94,7 @@ function beginSearch() {
     const videoSearchTerm = artist + ' ' + song;    
     queryArtist.val("");
     querySong.val("");
+    queryArtist.focus();
     getLyricsData(artist, song, LyricsDataCallback);
     getVideoData(videoSearchTerm, VideoDataCallback);
     toggleHiddenAttr();

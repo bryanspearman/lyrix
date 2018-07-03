@@ -26,12 +26,6 @@
   padding-right: 1.04166666%;
 }
 
-html {
-    background: url(img/blue-sm-bg.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-  }
-
 body {
 	font-family: 'Open Sans', sans-serif;
   font-size: 1em;
@@ -41,13 +35,18 @@ body {
 	margin: 0;
 }
 
+a.channelLink {
+  color: red;
+  margin-bottom: 20px;
+}
+
 a {
 	color: #666;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #ff0000;
+	color: #000;
 	transition: 0.3s ease;
 }
 
@@ -117,6 +116,11 @@ button:hover {
   width: 100%;
 }
 
+html {
+  background: #e1e1e1;
+  background-image: none;
+}
+
 .hdr-container {
   width: 100%;
   margin: 0px;
@@ -124,12 +128,8 @@ button:hover {
   position: fixed;
   top: 0px;
   right: 0px;
-  background: transparent;
-  /*background: url(img/blue-sm-bg.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: bottom;
-  z-index: 2;*/
+  background: url(img/type.png) repeat;
+  z-index: 2;
   -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0,0.5);
   -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
@@ -139,15 +139,15 @@ main {
   padding: 15px;
   margin: 75px auto 50px auto;
   width: 100%;
-  background: #fff;
+  background: none;
   position: relative;
 }
 
 h2 {
   font-family: 'Yantramanav', sans-serif;
   padding-top: 20px;
-  color: #090d30;
-  border-bottom: 4px dotted #e1e1e1;
+  color: #333;
+  border-bottom: 4px dotted #333;
   width: 90%;
 }
 
@@ -221,7 +221,7 @@ footer {
   padding: 7px 0px;
   margin: 0px;
   text-align: center;
-  background: #090d30;
+  background: #00000099;
   color: #fff;
   position: fixed;
   bottom: 0px;
@@ -252,11 +252,10 @@ footer p {
    .col-11 {width: 91.666667%;}
    .col-12 {width: 100%;}
   
-  html {
-    background: url(img/blue-bg.jpg);
-	  background-attachment: fixed;
-	  background-size: cover;
-  }
+    html {
+        background: url(img/vertical_cloth_@2X.png);
+        background-repeat: repeat;
+      }
 
   .hdr-container {
     width: 100%;
@@ -265,10 +264,7 @@ footer p {
     position: fixed;
     top: 0px;
     right: 0px;
-    background: url(img/blue-bg.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    background-position-y: -800px;
+    background: url(img/type.png) repeat;
     z-index: 2;
     -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0,0.5);
     -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
@@ -378,7 +374,7 @@ footer p {
     padding: 7px 0px;
   	margin: 0px;
   	text-align: center;
-  	background: #090d3099;
+  	background: #00000099;
   	color: #fff;
   	position: fixed;
   	bottom: 0px;
