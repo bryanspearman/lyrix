@@ -102,6 +102,13 @@ button:hover {
 	margin: -10px 0px;
 }
 
+.errMsg {
+  font-size: 1em;
+  font-weight: bold;
+  color: darkred;
+  text-align: center;
+}
+
 
 
 /* ///////////////////   Mobile defaults   ////////////////////////// */
@@ -358,12 +365,6 @@ footer p {
     -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
     box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
   }
-
-  /*.js-search-results {
-    padding: 0;
-    margin: 0 auto;
-    width: 90%;
-  }*/
 
   .videoThumbnail {
     width: 100%;

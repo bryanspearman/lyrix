@@ -11,15 +11,16 @@ function getLyricsData(artist, track, callback) {
   const query = {
     apikey:`oK4BjTgWNvSOZObSdtkDUIT9ERJyR53WYqetVDZvVi4ynNhHAENoybpyN3K5tmQl`,
   }
-  $.getJSON(`${Lyrics_URL}/${artist}/${track}`, query, callback);
+  $.getJSON(`${Lyrics_URL}/${artist}/${track}`, query, callback)
+    .fail(showErr);
 }
 
 function renderLyricsHtml(result) {
   return `
       <h3>${result.track.name}</h3>
       <p class="byName">Lyrics by: ${result.artist.name}</p>
-        <pre>${result.track.text}</pre>
-        <p class="copyright">${result.copyright.text}</p> 
+      <pre>${result.track.text}</pre>
+      <p class="copyright">${result.copyright.text}</p> 
   `;
 }
 
@@ -28,11 +29,15 @@ function LyricsDataCallback(data) {
   $('.lyrix').html(results);
 }
 
-
+function showErr(err) {
+  const errMsg = (`<p class="errMsg">😔 Sorry, we couldn't find any lyrics for that song.</p>`);
+  $('.lyrix').html(errMsg);
+}
 
 
 
 //Video handling
+//YouTube API will (always) return results so it does not contain an error function
 
 function getVideoData(searchTerm, callback) {
   const settings = {
@@ -73,7 +78,7 @@ function VideoDataCallback(data) {
 //a11y tweak to unhide the results area
 
 function toggleHiddenAttr() {
-  $('section').prop('hidden', false);
+  $('.js-search-results').prop('hidden', false);
 }
 
 
@@ -85,11 +90,12 @@ function beginSearch() {
     const queryArtist = $(event.currentTarget).find('.js-artist');
     const querySong = $(event.currentTarget).find('.js-song');
     const artist = queryArtist.val();
-    const song = querySong.val();    
+    const song = querySong.val();
+    const videoSearchTerm = artist + ' ' + song;    
     queryArtist.val("");
     querySong.val("");
     getLyricsData(artist, song, LyricsDataCallback);
-    getVideoData(song, VideoDataCallback);
+    getVideoData(videoSearchTerm, VideoDataCallback);
     toggleHiddenAttr();
   });
 }
