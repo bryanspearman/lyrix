@@ -76,12 +76,7 @@ button:hover {
 	font-size: .9em;
 }
 
-.errMsg {
-  font-size: 1em;
-  font-weight: bold;
-  color: darkred;
-  text-align: center;
-}
+
 
 
 
@@ -238,15 +233,12 @@ header p {
   border: 1px solid #555;
 }
 
-/*a.channelLink {
+.errMsg {
+  font-size: 1em;
+  font-weight: bold;
   color: #fff;
-  margin-bottom: 20px;
+  text-align: center;
 }
-
-a.channelLink:hover {
-  color: #red;
-  margin-bottom: 20px;
-}*/
 
 footer {
   width: 100%;
@@ -453,15 +445,12 @@ footer p {
     border: 1px solid #555;
   }
 
-  /*a.channelLink {
-  color: #333;
-  margin-bottom: 20px;
+ .errMsg {
+  font-size: 1em;
+  font-weight: bold;
+  color: darkred;
+  text-align: center;
   }
-
-  a.channelLink:hover {
-  color: #red;
-  margin-bottom: 20px;
-}*/
 
   footer {
     width: 100%;
