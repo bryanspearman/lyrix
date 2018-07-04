@@ -36,12 +36,12 @@ body {
 }
 
 a.channelLink {
-  color: red;
+  color: #333;
   margin-bottom: 20px;
 }
 
 a {
-	color: #666;
+	color: #333;
 	text-decoration: none;
 }
 
