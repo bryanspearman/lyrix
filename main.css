@@ -88,7 +88,7 @@ input[type=text]:visited {
 }
 
 button:hover {
-	background: #25ce10;
+	background: #40a334;
 	cursor: pointer;
 }
 
@@ -117,8 +117,8 @@ button:hover {
 }
 
 html {
-  background: #e1e1e1;
-  background-image: none;
+  background: url(img/vertical_cloth.png);
+  background-repeat: repeat;
 }
 
 .hdr-container {
@@ -141,6 +141,38 @@ main {
   width: 100%;
   background: none;
   position: relative;
+}
+
+.hello {
+  margin: 0 auto;
+  text-align: center;
+  padding-right: 15px;
+  font-family: 'Yantramanav', sans-serif;
+}
+
+.welcome {
+  position: relative;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 2.3em;
+  text-transform: uppercase;
+  margin: 0px auto -10px auto;
+}
+
+.intro {
+  position: relative;
+  font-weight: bold;
+  color: #5be04a;
+  font-size: 1.4em;
+  text-transform: uppercase;
+}
+
+.welcome2 {
+  position: relative;
+  color: #fff;
+  font-weight: lighter;
+  font-size: 1.2em;
+  margin: 0px auto 20px auto;
 }
 
 h2 {
@@ -172,7 +204,7 @@ button {
   font-size: 1.1em;
   font-weight: bold;
   border-radius: 3px;
-  background: #40a334;
+  background: #25ce10;
   color: #000;
   border: 1px solid #25ce10;
   transition: all 0.3s ease;
@@ -185,14 +217,12 @@ header h1 {
   margin-top: 0px;
   font-family: 'Yantramanav', sans-serif;
   color: #fff;
-  text-shadow: 2px 2px 2px #444;
 }
 
 header p {
   font-size: 1.2em;
   text-align: center;
   color: #fff;
-  text-shadow: 2px 2px 2px #444;
 }
 
 .lyrix {
@@ -266,9 +296,9 @@ footer p {
     right: 0px;
     background: url(img/type.png) repeat;
     z-index: 2;
-    -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0,0.5);
-    -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
-    box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 1px 3px 3px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px 3px 3px rgba(0, 0, 0, .5);
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, .5);
   }
 
   .lyrix {
@@ -297,7 +327,7 @@ footer p {
     padding: 25px 0px 0px 20px;
     color: #fff;
     border: none;
-}
+  }
 
   input[type=text] {
     -webkit-appearance: none;
@@ -318,13 +348,13 @@ footer p {
     font-size: 1em;
     font-weight: bold;
     border-radius: 3px;
-    background: #40a334;
+    background: #25ce10;
     color: #000;
     border: 1px solid #25ce10;
     transition: all 0.3s ease;
   }
 
-  header {
+  header.hdr {
   	max-width: 1000px;
 	  padding: 10px 20px 20px 0px;
     margin: 0px auto;
@@ -350,6 +380,36 @@ footer p {
     font-size: 1.8em;
     color: #fff;
     text-shadow: 2px 2px 2px #444;
+  }
+
+  .hello {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .welcome {
+    position: relative;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 6em;
+    text-transform: uppercase;
+    margin: 0px auto -20px auto;
+  }
+
+  .intro {
+    position: relative;
+    font-weight: bold;
+    color: #5be04a;
+    font-size: 4em;
+    text-transform: uppercase;
+  }
+
+  .welcome2 {
+    position: relative;
+    color: #fff;
+    font-weight: normal;
+    font-size: 2em;
+    margin: 0px auto 20px auto;
   }
 
   .searchResult {
