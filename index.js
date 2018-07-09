@@ -17,10 +17,10 @@ function getLyricsData(artist, track, callback) {
 
 function renderLyricsHtml(result) {
   return `
-      <h3>${result.track.name}</h3>
-      <p class="byName">Lyrics by: ${result.artist.name}</p>
-      <pre>${result.track.text}</pre>
-      <p class="copyright">${result.copyright.text}</p> 
+      <h3 title="Song Title">${result.track.name}</h3>
+      <p class="byName" title="Lyrics By">Lyrics by: ${result.artist.name}</p>
+      <pre title="Song Lyrics">${result.track.text}</pre>
+      <p class="copyright" title="Copyright Info">${result.copyright.text}</p> 
   `;
 }
 
