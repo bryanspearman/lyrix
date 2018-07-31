@@ -8,15 +8,15 @@ const Lyrics_URL = 'https://orion.apiseeds.com/api/music/lyric';
 // Lyrics handling
 
 function getLyricsData(artist, track, callback) {
-  const query = {
-    apikey:`oK4BjTgWNvSOZObSdtkDUIT9ERJyR53WYqetVDZvVi4ynNhHAENoybpyN3K5tmQl`,
-  }
-  $.getJSON(`${Lyrics_URL}/${artist}/${track}`, query, callback)
-    .fail(showErr);
+    const query = {
+        apikey:'oK4BjTgWNvSOZObSdtkDUIT9ERJyR53WYqetVDZvVi4ynNhHAENoybpyN3K5tmQl',
+    };
+    $.getJSON(`${Lyrics_URL}/${artist}/${track}`, query, callback)
+        .fail(showErr);
 }
 
 function renderLyricsHtml(result) {
-  return `
+    return `
       <h3 title="Song Title">${result.track.name}</h3>
       <p class="byName" title="Lyrics By">Lyrics by: ${result.artist.name}</p>
       <pre title="Song Lyrics">${result.track.text}</pre>
@@ -26,12 +26,12 @@ function renderLyricsHtml(result) {
 
 function LyricsDataCallback(data) {
     const results = renderLyricsHtml(data.result);
-  $('.lyrix').html(results);
+    $('.lyrix').html(results);
 }
 
 function showErr(err) {
-  const errMsg = (`<p class="errMsg">😔 Sorry, we couldn't find any lyrics for that song.</p>`);
-  $('.lyrix').html(errMsg);
+    const errMsg = ('<p class="errMsg">😔 Sorry, we couldn\'t find any lyrics for that song.</p>');
+    $('.lyrix').html(errMsg);
 }
 
 
@@ -40,24 +40,24 @@ function showErr(err) {
 //YouTube API will (always) return results so it does not contain an error function
 
 function getVideoData(searchTerm, callback) {
-  const settings = {
-    url: YouTube_Search_URL,
-    data: {
-      q: `${searchTerm} in:name`,
-      part: 'snippet',
-      per_page: 5,
-      key: 'AIzaSyCJUNC_Bo_DvZJgUU3P_p4dXVfZhtv1nLI',
-    },
-    dataType: 'json',
-    type: 'GET',
-    success: callback
-  };
+    const settings = {
+        url: YouTube_Search_URL,
+        data: {
+            q: `${searchTerm} in:name`,
+            part: 'snippet',
+            per_page: 5,
+            key: 'AIzaSyCJUNC_Bo_DvZJgUU3P_p4dXVfZhtv1nLI',
+        },
+        dataType: 'json',
+        type: 'GET',
+        success: callback
+    };
 
-  $.ajax(settings);
+    $.ajax(settings);
 }
 
 function renderVideoHtml(result) {
-  return `
+    return `
     <p><a data-fancybox class="iframe" title="opens video ${result.snippet.title}" href="https://www.youtube.com/watch?v=${result.id.videoId}"><img class="videoThumbnail" src="${result.snippet.thumbnails.high.url}" border="0" alt="${result.snippet.title}"/></a></p>
      <h3>
       <a data-fancybox class="js-result-title" title="opens video ${result.snippet.title}" href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank">${result.snippet.title}</a>
@@ -70,7 +70,7 @@ function renderVideoHtml(result) {
 
 function VideoDataCallback(data) {
     const results = data.items.map((item, index) => renderVideoHtml(item));
-  $('.vidz').html(results);
+    $('.vidz').html(results);
 }
 
 
@@ -78,27 +78,27 @@ function VideoDataCallback(data) {
 //a11y tweak to unhide the results area
 
 function toggleHiddenAttr() {
-  $('.js-search-results').prop('hidden', false);
+    $('.js-search-results').prop('hidden', false);
 }
 
 
 //Launch functionality
 
 function beginSearch() {
-  $('.js-search-form').submit(event => {
-    event.preventDefault();
-    const queryArtist = $(event.currentTarget).find('.js-artist');
-    const querySong = $(event.currentTarget).find('.js-song');
-    const artist = queryArtist.val();
-    const song = querySong.val();
-    const videoSearchTerm = artist + ' ' + song;    
-    queryArtist.val("");
-    querySong.val("");
-    queryArtist.focus();
-    getLyricsData(artist, song, LyricsDataCallback);
-    getVideoData(videoSearchTerm, VideoDataCallback);
-    toggleHiddenAttr();
-  });
+    $('.js-search-form').submit(event => {
+        event.preventDefault();
+        const queryArtist = $(event.currentTarget).find('.js-artist');
+        const querySong = $(event.currentTarget).find('.js-song');
+        const artist = queryArtist.val();
+        const song = querySong.val();
+        const videoSearchTerm = artist + ' ' + song;    
+        queryArtist.val('');
+        querySong.val('');
+        queryArtist.focus();
+        getLyricsData(artist, song, LyricsDataCallback);
+        getVideoData(videoSearchTerm, VideoDataCallback);
+        toggleHiddenAttr();
+    });
 }
 
 $(beginSearch);
